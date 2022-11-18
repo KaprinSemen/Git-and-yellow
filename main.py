@@ -20,7 +20,7 @@ class MyWidget(QMainWindow):
 
     def paint(self):
         self.do_paint = True
-        self.repaint()
+        self.update()
 
     def paintEvent(self, event):
         if self.do_paint:
@@ -31,9 +31,11 @@ class MyWidget(QMainWindow):
 
 
     def drawCircle(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
-        size = randrange(1, 255)
-        qp.drawEllipse(randrange(1, 600), randrange(1, 600), size, size)
+         for i in range(3):
+            qp.setBrush(QColor(255, 255, 0))
+            size = randrange(1, 400)
+
+            qp.drawEllipse(randrange(1, 600), randrange(1, 600), size, size)
 
 
 if __name__ == "__main__":
